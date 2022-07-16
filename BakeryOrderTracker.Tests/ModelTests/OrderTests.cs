@@ -13,7 +13,8 @@ namespace BakeryOrderTracker.Tests
       public void OrderConstructor_CreateInstanceOfOrder_Order()
       {
         string description = "Coava's weekly order of scones";
-        Order newOrder = new Order("test", description);
+        int price = 50;
+        Order newOrder = new Order("test", description, price);
         Assert.AreEqual(typeof(Order), newOrder.GetType());
       }
 
@@ -22,7 +23,8 @@ namespace BakeryOrderTracker.Tests
     {
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
-      Order newOrder = new Order(title, description);
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
     }
@@ -32,7 +34,8 @@ namespace BakeryOrderTracker.Tests
     {
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
-      Order newOrder = new Order(title, description);
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
       string updateTitle = "Coava coffe sandwich order";
       newOrder.Title = updateTitle;
       string result = newOrder.Title;
@@ -44,7 +47,8 @@ namespace BakeryOrderTracker.Tests
     {
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
-      Order newOrder = new Order(title, description);
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -54,11 +58,37 @@ namespace BakeryOrderTracker.Tests
     {
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
-      Order newOrder = new Order(title, description);
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
       string updateDescription = "Coava's weekly sandwich order";
       newOrder.Description = updateDescription;
       string result = newOrder.Description;
       Assert.AreEqual(updateDescription, result);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsInstancePrice_Int()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
+      int result = newOrder.Price;
+      Assert.AreEqual(price, result);
+    }
+
+    [TestMethod]
+    public void SetPrice_UpdatesInstancePrice_Int()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      Order newOrder = new Order(title, description, price);
+      int updatePrice = 75;
+      newOrder.Price = updatePrice;
+      int result = newOrder.Price;
+      Assert.AreEqual(updatePrice, result);
+    }
+
   }
 }
