@@ -24,5 +24,16 @@ namespace BakeryOrderTracker.Tests
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
     }
+
+    [TestMethod]
+    public void SetTitle_UpdatesInstanceTitle_String()
+    {
+      string title = "Coava coffee pastry order";
+      Order newOrder = new Order(title);
+      string updateTitle = "Coava coffe sandwich order";
+      newOrder.Title = updateTitle;
+      string result = newOrder.Title;
+      Assert.AreEqual(updateTitle, result);
+    }
   }
 }
