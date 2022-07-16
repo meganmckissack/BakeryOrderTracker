@@ -167,5 +167,23 @@ namespace BakeryOrderTracker.Tests
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void FindId_ResturnsOrderBasedOnId_Order()
+    {
+      string title01 = "Coava coffee pastry order";
+      string description01 = "Coava's weekly order of scones";
+      int price01 = 50;
+      string date01 =  "07-16-2020";
+      string title02 = "Coava coffee sandwich order";
+      string description02 = "Coava's weekly order of sandwiches";
+      int price02 = 75;
+      string date02 =  "08-29-2020";
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
