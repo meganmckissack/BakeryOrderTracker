@@ -135,5 +135,25 @@ namespace BakeryOrderTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAllOrders_ReturnsOrders_OrderLIst()
+    {
+      string title01 = "Coava coffee pastry order";
+      string description01 = "Coava's weekly order of scones";
+      int price01 = 50;
+      string date01 =  "07-16-2020";
+      string title02 = "Coava coffee sandwich order";
+      string description02 = "Coava's weekly order of sandwiches";
+      int price02 = 75;
+      string date02 =  "08-29-2020";
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+      List<Order> newOrder = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newOrder, result);
+      
+    }
   }
 }
