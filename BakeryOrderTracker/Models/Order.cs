@@ -11,9 +11,10 @@ namespace BakeryOrderTracker.Models
     public static DateTime Today { get; set; }
     private static List<Order> _orders = new List<Order>{};
 
-    public Order(string title)
+    public Order(string title, string description)
     {
       Title = title;
+      Description = description;
     }
   }
 

@@ -12,7 +12,8 @@ namespace BakeryOrderTracker.Tests
     [TestMethod]
       public void OrderConstructor_CreateInstanceOfOrder_Order()
       {
-        Order newOrder = new Order("test");
+        string description = "Coava's weekly order of scones";
+        Order newOrder = new Order("test", description);
         Assert.AreEqual(typeof(Order), newOrder.GetType());
       }
 
@@ -20,7 +21,8 @@ namespace BakeryOrderTracker.Tests
     public void GetTitle_ReturnsInstanceTitle_String()
     {
       string title = "Coava coffee pastry order";
-      Order newOrder = new Order(title);
+      string description = "Coava's weekly order of scones";
+      Order newOrder = new Order(title, description);
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
     }
@@ -29,11 +31,34 @@ namespace BakeryOrderTracker.Tests
     public void SetTitle_UpdatesInstanceTitle_String()
     {
       string title = "Coava coffee pastry order";
-      Order newOrder = new Order(title);
+      string description = "Coava's weekly order of scones";
+      Order newOrder = new Order(title, description);
       string updateTitle = "Coava coffe sandwich order";
       newOrder.Title = updateTitle;
       string result = newOrder.Title;
       Assert.AreEqual(updateTitle, result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsInstanceDescription_String()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      Order newOrder = new Order(title, description);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_UpdatesInstanceDescription_String()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      Order newOrder = new Order(title, description);
+      string updateDescription = "Coava's weekly sandwich order";
+      newOrder.Description = updateDescription;
+      string result = newOrder.Description;
+      Assert.AreEqual(updateDescription, result);
     }
   }
 }
