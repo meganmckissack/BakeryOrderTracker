@@ -153,7 +153,19 @@ namespace BakeryOrderTracker.Tests
 
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newOrder, result);
-      
+    }
+
+    [TestMethod]
+    public void GetId_CreateOrdersWithIdAndReturnsId_Int()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      string date =  "07-16-2020";;
+      Order newOrder = new Order(title, description, price, date);
+
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
     }
   }
 }
