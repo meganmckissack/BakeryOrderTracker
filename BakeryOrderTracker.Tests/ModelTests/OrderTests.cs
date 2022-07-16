@@ -14,7 +14,8 @@ namespace BakeryOrderTracker.Tests
       {
         string description = "Coava's weekly order of scones";
         int price = 50;
-        Order newOrder = new Order("test", description, price);
+        string date =  "07-16-2020";
+        Order newOrder = new Order("test", description, price, date);
         Assert.AreEqual(typeof(Order), newOrder.GetType());
       }
 
@@ -24,7 +25,8 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       string result = newOrder.Title;
       Assert.AreEqual(title, result);
     }
@@ -35,7 +37,8 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       string updateTitle = "Coava coffe sandwich order";
       newOrder.Title = updateTitle;
       string result = newOrder.Title;
@@ -48,7 +51,8 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -59,7 +63,8 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       string updateDescription = "Coava's weekly sandwich order";
       newOrder.Description = updateDescription;
       string result = newOrder.Description;
@@ -72,7 +77,8 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       int result = newOrder.Price;
       Assert.AreEqual(price, result);
     }
@@ -83,12 +89,38 @@ namespace BakeryOrderTracker.Tests
       string title = "Coava coffee pastry order";
       string description = "Coava's weekly order of scones";
       int price = 50;
-      Order newOrder = new Order(title, description, price);
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
       int updatePrice = 75;
       newOrder.Price = updatePrice;
       int result = newOrder.Price;
       Assert.AreEqual(updatePrice, result);
     }
+    
+    [TestMethod]
+    public void GetDate_ReturnsInstanceDate_String()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
+      string result = newOrder.Date;
+      Assert.AreEqual(date, result);
+    }
 
+    [TestMethod]
+    public void SetDate_UpdatesInstanceDate_String()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      string date =  "07-16-2020";;
+      Order newOrder = new Order(title, description, price, date);
+      string updateDate = "08-29-2020";
+      newOrder.Date = updateDate;
+      string result = newOrder.Date;
+      Assert.AreEqual(updateDate, result);
+    }
   }
 }
