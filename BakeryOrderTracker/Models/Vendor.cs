@@ -14,6 +14,19 @@ namespace BakeryOrderTracker.Models
     {
       Name = vendorName;
       Description = vendorDescription;
+      _vendors.Add(this);
+      Id = _vendors.Count;
+      Orders = new List<Order>{}; 
+    }
+
+    public static List<Vendor> GetAll()
+    {
+      return _vendors;
+    }
+
+    public static void ClearAll()
+    {
+      _vendors.Clear();
     }
   }
 }

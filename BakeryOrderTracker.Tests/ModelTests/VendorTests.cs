@@ -6,8 +6,13 @@ using System;
 namespace BakeryOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -58,6 +63,14 @@ namespace BakeryOrderTracker.Tests
       newVendor.Description = updateDescription;
       string result = newVendor.Description;
       Assert.AreEqual(updateDescription, result);
+    }
+
+    [TestMethod]
+    public void GetAllVendors_ReturnsEmptyList_VendorList()
+    {
+      List<Vendor> newVendor = new List<Vendor>{ };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newVendor, result);
     }
   }
 
