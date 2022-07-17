@@ -28,5 +28,10 @@ namespace BakeryOrderTracker.Models
     {
       _vendors.Clear();
     }
+
+    public static Vendor Find(int searchId)
+    {
+      return _vendors[searchId-1];
+    } 
   }
 }

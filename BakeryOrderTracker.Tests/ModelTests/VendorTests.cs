@@ -98,6 +98,21 @@ namespace BakeryOrderTracker.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void FindId_ResturnsVendorBasedOnId_Vendor()
+    {
+      string vendorName01 = "Coava Coffee";
+      string vendorDescription01 = "Portland coffee shop with four locations";
+      string vendorName02 = "St. Simon Coffee";
+      string vendorDescription02 = "Portland NE coffee shop with two nearby locations";
+      Vendor newVendor1 = new Vendor(vendorName01, vendorDescription01);
+      Vendor newVendor2 = new Vendor(vendorName02, vendorDescription02);
+      List<Vendor> newVendor = new List<Vendor> { newVendor1, newVendor2 };
+
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 
 }
