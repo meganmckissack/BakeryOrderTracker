@@ -1,3 +1,26 @@
 body {
-  background-color: darkgoldenrod;
+  background-color: #6666cc;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: #FEF9E6;
+}
+
+.logo {
+  width: 60%;
+  height: auto;
+  padding: 5%;
+}
+
+a {
+  color: #7FC6A6;
+}
+
+a :hover {
+  color: #617e71
 }
