@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+<body>
+  @using BakeryOrderTracker.Models;
+
+  <h2>Orders for this vendor:</h2>
+
+  <ol>
+    @foreach (Order order in @Model["orders"])
+    {
+      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
+    }
+  </ol>
+
+
+  <p><a href='/vendors'>Return to the vendor list</a></p>
+  <p><a href='/'>Return to Main Page</a></p>
+
+</body>
