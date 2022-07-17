@@ -87,6 +87,17 @@ namespace BakeryOrderTracker.Tests
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newVendor, result);
     }
+
+    [TestMethod]
+    public void GetId_CreateVendorsWithIdAndReturnsId_Int()
+    {
+      string vendorName = "Coava Coffee";
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 
 }
