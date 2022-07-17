@@ -13,7 +13,6 @@ namespace BakeryOrderTracker.Models
     public Vendor(string vendorName)
     {
       Name = vendorName;
-      
     }
   }
 }
