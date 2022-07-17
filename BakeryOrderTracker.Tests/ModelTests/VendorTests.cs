@@ -113,6 +113,25 @@ namespace BakeryOrderTracker.Tests
       Vendor result = Vendor.Find(2);
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddOrder_ConntectsOrderWithVendor_OrderList()
+    {
+      string title = "Coava coffee pastry order";
+      string description = "Coava's weekly order of scones";
+      int price = 50;
+      string date =  "07-16-2020";
+      Order newOrder = new Order(title, description, price, date);
+      List<Order> newList = new List<Order> { newOrder };
+
+      string vendorName = "Coava Coffee";
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      newVendor.AddOrder(newOrder);
+
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 
 }
