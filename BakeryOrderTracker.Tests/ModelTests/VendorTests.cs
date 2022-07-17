@@ -23,6 +23,17 @@ namespace BakeryOrderTracker.Tests
       string result = newVendor.Name;
       Assert.AreEqual(vendorName, result);
     }
+
+    [TestMethod]
+    public void SetName_UpdatesVendorName_String()
+    {
+      string vendorName = "Coava Coffee";
+      Vendor newVendor = new Vendor(vendorName);
+      string updateName = "St. Simon Coffee";
+      newVendor.Name = updateName;
+      string result = newVendor.Name;
+      Assert.AreEqual(updateName, result);
+    }
   }
 
 }
