@@ -11,7 +11,8 @@ namespace BakeryOrderTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test vendor");
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor("test vendor", vendorDescription);
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     } 
 
@@ -19,7 +20,8 @@ namespace BakeryOrderTracker.Tests
     public void GetName_ReturnsVendorName_String()
     {
       string vendorName = "Coava Coffee";
-      Vendor newVendor = new Vendor(vendorName);
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       string result = newVendor.Name;
       Assert.AreEqual(vendorName, result);
     }
@@ -28,11 +30,34 @@ namespace BakeryOrderTracker.Tests
     public void SetName_UpdatesVendorName_String()
     {
       string vendorName = "Coava Coffee";
-      Vendor newVendor = new Vendor(vendorName);
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       string updateName = "St. Simon Coffee";
       newVendor.Name = updateName;
       string result = newVendor.Name;
       Assert.AreEqual(updateName, result);
+    }
+
+    [TestMethod]
+    public void GetDescription_ReturnsVendorDescription_String()
+    {
+      string vendorName = "Coava Coffee";
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      string result = newVendor.Description;
+      Assert.AreEqual(vendorDescription, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_UpdatesVendorDescription_String()
+    {
+      string vendorName = "Coava Coffee";
+      string vendorDescription = "Portland coffee shop with four locations";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      string updateDescription = "Portland coffee shop with four locations also gets gluten-free";
+      newVendor.Description = updateDescription;
+      string result = newVendor.Description;
+      Assert.AreEqual(updateDescription, result);
     }
   }
 

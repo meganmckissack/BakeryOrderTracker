@@ -10,9 +10,10 @@ namespace BakeryOrderTracker.Models
     public int Id { get; }
     public List<Order> Orders { get; set; }
 
-    public Vendor(string vendorName)
+    public Vendor(string vendorName, string vendorDescription)
     {
       Name = vendorName;
+      Description = vendorDescription;
     }
   }
 }
